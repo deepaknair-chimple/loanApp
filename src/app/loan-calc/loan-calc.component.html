@@ -1,0 +1,81 @@
+<div class="backgrndImage"></div>
+<ng-sidebar-container class="formStyle">
+  <ng-sidebar [(opened)]="opened" [sidebarClass]="'sideBarBackground'">
+    <div class="sideBarColor">
+    <button class="demo-control"   (click)="_toggleSidebar()"></button>
+      <div  class="recent">Recent Data</div>
+<div>
+  <span class="recentSub">Amount</span>
+  <span class="">Month</span>
+</div>
+  <table  class="recentHeader" *ngFor="let value of recentAmt">
+   <tr (click)="recentValueCal(value.amount, value.month)">
+     <td class="recentStyle">
+     <span >{{value.amount}}</span>
+     </td>
+     <td class="recentStyle">
+     <span>{{value.month}}</span>
+     </td>
+   </tr>
+  </table>
+
+    </div>
+  </ng-sidebar>
+
+  <div ng-sidebar-content>
+    <button (click)="_toggleSidebar()" *ngIf="!opened"   style="background: url('../../assets/img/closing-icon.png');height: 36px;width: 52px"></button>
+    <h5 class="mainHeadingStyle">
+    <span>  INTEREST CALCULATOR </span>
+    </h5>
+
+    <div style="text-align: -webkit-center">
+
+    <table>
+    <tr>
+      <td  class="amountStyle">
+      <span>Enter Amount</span>
+      </td>
+      <td>
+      <span>Enter Month</span>
+      </td>
+    </tr>
+      <tr>
+        <td>
+    <input class="amountStyle" type="number" min="500" max="5000" placeholder="($500-$5000)" [(ngModel)]="amountVal">
+        </td>
+        <td>
+    <input class="amountStyle" type="number" min="6" max="24" placeholder="(6-24 months)" [(ngModel)]="month">
+        </td>
+        <td>
+          <button class="calButtonStyle"  (click)="calculate(amountVal)">Calculate</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>Slide to change Amount</span>
+        </td>
+        <td>
+          <input class="amountStyle" #rangeSelector type="range" min="500" max="5000"  value="500" step="10"  (change)="calculate(rangeSelector.value)">
+        </td>
+      </tr>
+      <tr>
+        <td  class="">
+          <span>Interest Rate</span>
+        </td>
+        <td class="boxStyle">
+          <span>{{interestRate}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td  class="">
+          <span>Monthly Payment</span>
+        </td>
+        <td class="boxStyle">
+          <span>{{monthlyPayment}}</span>
+        </td>
+      </tr>
+    </table>
+
+    </div>
+  </div>
+</ng-sidebar-container>

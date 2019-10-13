@@ -1,0 +1,61 @@
+.formStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.backgrndImage {
+  background: url('../../assets/img/background.jpg');
+  filter: blur(3px);
+  height: 100%;
+}
+.demo-control {
+  background: url('../../assets/img/side-bar-hamburger.png');
+  height: 33px;
+  width: 33px;
+  float: right
+}
+.sideBarColor {
+  background-color: #CC9900;
+  height: 100%;
+  width: 200px;
+ // margin-top: -16px;
+}
+.mainHeadingStyle {
+  width: 100%;
+text-align: center
+}
+.amountStyle {
+height: 25Px;
+  width: 200px;
+}
+.boxStyle {
+  height: 25Px;
+  width: 200px;
+  border: black 1px solid;
+}
+.calButtonStyle {
+  border-radius: 20px;
+  border: black 1px solid;
+  background-color: coral;
+  height: 30px;
+  width: 200px;
+cursor: pointer;
+}
+.recentStyle {
+ height: 30px;
+  width: 100px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+.recent {
+  padding-top: 50px;
+  padding-left: 40px;
+}
+.recentSub{
+  padding-right: 40px;
+  padding-left: 20px;
+}
+.recentHeader {
+  border: black 1px solid;
+}
